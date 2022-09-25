@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = require ('./router/userRouter');
 const subscriberRouter = require ('./router/subscriberRouter');
+const utilRouter = require ('./router/util');
 const cors = require('cors');
 
 
@@ -13,6 +14,7 @@ app.use(cors({origin : [
     'http://localhost:3000'
 ]}))
 app.use('/user',userRouter);
+app.use('/util',utilRouter);
 app.use('/subscriber',subscriberRouter);
 
 app.use(express.static('./static/resources'));

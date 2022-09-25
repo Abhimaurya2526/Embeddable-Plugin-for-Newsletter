@@ -5,7 +5,7 @@ const url= `mongodb+srv://abhi:abhi2@cluster0.2agagpc.mongodb.net/${databaseName
 
 mongoose.connect(url)
 .then((result) => {
-    console.log('connected to database ');
+    console.log('connected to database');
 } ).catch((err) =>{
     console.log(err);
 }

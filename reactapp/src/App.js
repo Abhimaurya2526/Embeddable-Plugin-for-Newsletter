@@ -5,7 +5,6 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Header from './components/Header';
 import Plugin from './components/Plugin';
-
 import Dashboard from "./components/Dashboard";
 function App() {
   return (
