@@ -1,72 +1,50 @@
-// to process user requests only
 const express = require('express');
 const router = express.Router();
-const Model = require('../models/userModel');
+const UserModel = require('../models/userModel');
 
-// Response Codes
-// 200 - Successfull
-// 400 - Client Side Error
-// 500 - Server Side Error
+router.post('/add', async (req, res) => {
+    try {
+        const newUser = await new UserModel(req.body).save();
+        res.status(201).json(newUser);
+    } catch (error) {
+        console.error('Error adding user:', error);
+        res.status(500).json({ error: 'Failed to add user' });
+    }
+});
 
-router.post('/add', (req, res) => {
-    console.log(req.body);
-    
-    // asynchronous functions
-    new Model(req.body).save()
-    .then((result) => {
-        console.log(result);
-        res.json(result);
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-    
-})
+router.get('/getall', async (req, res) => {
+    try {
+        const allUsers = await UserModel.find({});
+        res.json(allUsers);
+    } catch (error) {
+        console.error('Error fetching all users:', error);
+        res.status(500).json({ error: 'Failed to fetch users' });
+    }
+});
 
- 
-router.get('/getall', (req, res) => {
+router.get('/getbyemail/:email', async (req, res) => {
+    try {
+        const user = await UserModel.findOne({ email: req.params.email });
+        res.json(user);
+    } catch (error) {
+        console.error('Error fetching user by email:', error);
+        res.status(500).json({ error: 'Failed to fetch user by email' });
+    }
+});
 
-    Model.find({})
-    .then((result) => {
-        console.log(result);
-        res.json(result);
-    }).catch((err) => {
-        console.log(err);
-        res.json(err);
-    });
-
-})
-   
-router.get('/getbyemail/:email', (req, res) => {
-    console.log(req.params.email);
-
-    Model.find({ email : req.params.email })
-    .then((result) => {
-        res.json(result);
-    }).catch((err) => {
-        res.json(err);
-    });
-})
-
-
-router.post('/authenticate', (req, res) => {
-
-    const formdata = req.body;
-
-    Model.findOne({email : formdata.email, password : formdata.password})
-    .then((result) => {
-        if(result){
-            res.status(200).json(result);
-        }else{
-            res.status(401).json({status : 'login failed'});
+router.post('/authenticate', async (req, res) => {
+    const { email, password } = req.body;
+    try {
+        const user = await UserModel.findOne({ email, password });
+        if (user) {
+            res.status(200).json(user);
+        } else {
+            res.status(401).json({ error: 'Login failed' });
         }
-    })
-    .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-    });
-
-})
+    } catch (error) {
+        console.error('Error authenticating user:', error);
+        res.status(500).json({ error: 'Failed to authenticate user' });
+    }
+});
 
 module.exports = router;

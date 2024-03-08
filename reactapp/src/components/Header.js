@@ -25,6 +25,18 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarButtonsExample">
             {/* Left links */}
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <li className="nav-item">
+                <NavLink className="nav-link" to="/">
+                  Home
+                </NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/register">
+                  Register
+                </NavLink>
+              </li>
             
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
@@ -43,11 +55,7 @@ const Header = () => {
               </li>
 
            
-              <li className="nav-item">
-                <NavLink className="nav-link" to="/register">
-                  Register
-                </NavLink>
-              </li>
+              
             
             </ul>
             

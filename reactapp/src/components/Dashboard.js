@@ -30,6 +30,8 @@ const Dashboard = () => {
     }
   }
 
+  
+
 
   useEffect(() => {
     getDataFromBackend();
@@ -41,7 +43,6 @@ const Dashboard = () => {
         <tr>
           <th>Name</th>
           <th>Email</th>
-
         </tr>
       </thead>
       <tbody>

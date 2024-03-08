@@ -34,26 +34,27 @@ const Register = () => {
       'url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp")'
   }}
 >
-  <div className="mask d-flex align-items-center h-100 gradient-custom-3">
-    <div className="container h-100">
+  <div className="mask d-flex align-items-center   ">
+    <div className="container  h-100">
       <div className="row d-flex justify-content-center align-items-center h-100">
-        <div className="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div className="card" style={{ borderRadius: 15 }}>
-            <div className="card-body p-5">
-              <h2 className="text-uppercase text-center mb-5">
+        <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div className="card gradient-custom-3" style={{ borderRadius: "1rem"}}>
+            <div className="card-body ">
+              <h2 className="text-uppercase text-center mb-4">
                 Create an account
               </h2>
                  
               <Formik initialValues={{ name : '',email : '', password : '',repassword : ''}} onSubmit={userSubmit}>
                     { ({ values, handleSubmit, handleChange }) => (
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} >
                 <div className="form-outline mb-4">
                   <input
                     type="name"
                     id="name"
                     value={values.name}
                     onChange={handleChange}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg "
+                    style={{backgroundColor: '#e4f2f1'}}
                   />
                   <label className="form-label" htmlFor="form3Example1cg">
                     Your Name
@@ -66,6 +67,7 @@ const Register = () => {
                     value={values.email}
                     onChange={handleChange}
                     className="form-control form-control-lg"
+                    
                   />
                   <label className="form-label" htmlFor="form3Example3cg">
                     Your Email
@@ -78,6 +80,7 @@ const Register = () => {
                     value={values.password}
                     onChange={handleChange}
                     className="form-control form-control-lg"
+
                   />
                   <label className="form-label" htmlFor="form3Example4cg">
                     Password
@@ -85,19 +88,21 @@ const Register = () => {
                 </div>
                 <div className="form-outline mb-4">
                   <input
-                    type="password"
-                    id="password"
+                    type="repassword"
+                    id="repassword"
                     value={values.repassword}
                     onChange={handleChange}
                     className="form-control form-control-lg"
+                    style={{backgroundColor: '#e4f2f1'}}
+
                   />
                   <label className="form-label" htmlFor="form3Example4cdg">
                     Repeat your password
                   </label>
                 </div>
-                <div className="form-check d-flex justify-content-center mb-5">
+                <div className="form-check d-flex justify-content-center mb-2">
                   <input
-                    className="form-check-input me-2"
+                    className="form-check-input "
                     type="checkbox"
                     defaultValue=""
                     id="form2Example3cg"
@@ -117,7 +122,7 @@ const Register = () => {
                     Register
                   </button>
                 </div>
-                <p className="text-center text-muted mt-5 mb-0">
+                <p className="text-center text-muted mt-2 mb-0">
                   Have already an account?{" "}
                   <a href="/Login" className="fw-bold text-body">
                     <u>Login here</u>

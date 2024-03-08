@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const databaseName = "abhi"
-const url= `mongodb+srv://abhi:abhi2@cluster0.2agagpc.mongodb.net/${databaseName}?retryWrites=true&w=majority`;
+const url= `mongodb+srv://abhi:abhi2@cluster0.hrmj2ca.mongodb.net/`;
 
 mongoose.connect(url)
 .then((result) => {

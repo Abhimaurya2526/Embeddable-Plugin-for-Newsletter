@@ -1,6 +1,9 @@
 import { Formik } from 'formik';
 import React from 'react'
 import Swal from "sweetalert2";
+import "./Register.css"
+
+
 
 const Login = () => {
   // 1. submit function
@@ -45,13 +48,16 @@ const Login = () => {
 
   return (
     <div>
-        <section className="vh-100" style={{ backgroundColor: "#508bfc" }}>
-  <div className="container py-5 h-100">
-    <div className="row d-flex justify-content-center align-items-center h-100">
+        <section className="vh-100 bg-image "  style={{
+    backgroundImage:
+      'url("https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp")'
+  }}>
+  <div className=" container py-3 h-100 ">
+    <div className="row d-flex justify-content-center align-items-center h-100 ">
       <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div className="card shadow-2-strong" style={{ borderRadius: "1rem" }}>
+        <div className="card shadow-2-strong gradient-custom-3" style={{ borderRadius: "1rem" }}>
           <div className="card-body p-5 text-center">
-            <h3 className="mb-5">Sign in</h3>
+            <h3 className="text-uppercase text-center mb-4">Sign in</h3>
             <Formik initialValues={{email : '', password : ''}} onSubmit={loginSubmit}>
                     { ({values,handleSubmit, handleChange}) => (
                       <form onSubmit={handleSubmit}>
@@ -67,7 +73,7 @@ const Login = () => {
                 Email
               </label>
             </div>
-            <div className="form-outline mb-4">
+            <div className="form-outline mb-2">
               <input
                 type="password"
                 id="password"
@@ -108,7 +114,7 @@ const Login = () => {
               style={{ backgroundColor: "#3b5998" }}
               type="submit"
             >
-              <i className="fab fa-facebook-f me-2" />
+              <i className="fab fa-facebook-f mb-2" />
               Sign in with facebook
             </button>
             </form>
