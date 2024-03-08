@@ -6,7 +6,9 @@
  
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "vercel-build": "node ./build.js",
+    "vercel-build": "node ./index.js"
   },
   "keywords": [],
   "author": "",
