@@ -7,7 +7,7 @@
   "scripts": {
 
     "dev": "node index.js",
-     "build": "npm run dev"
+     "build": "npm run build"
   },
   "keywords": [],
   "author": "",
