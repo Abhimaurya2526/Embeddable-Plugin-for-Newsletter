@@ -4,13 +4,9 @@
   "description": "",
   "main": "index.js",
  
-  "scripts": {
-
-
-
-
+  "scripts": 
+  {
     "dev": "node index.js",
-
      "build": "npm run build"
   },
   "keywords": [],
