@@ -8,7 +8,9 @@
 
 
 
+
     "dev": "node index.js",
+
      "build": "npm run build"
   },
   "keywords": [],
