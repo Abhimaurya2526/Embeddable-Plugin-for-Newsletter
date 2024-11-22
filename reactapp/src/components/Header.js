@@ -1,4 +1,4 @@
-   import React from "react"
+  import React from "react"
   import { NavLink } from "react-router-dom"
 
 const Header = () => {
@@ -37,7 +37,7 @@ const Header = () => {
                   Register
                 </NavLink>
               </li>
-            
+
               <li className="nav-item">
                 <NavLink className="nav-link" to="/login">
                   Login
@@ -52,11 +52,7 @@ const Header = () => {
                 <NavLink className="nav-link" to="/plugin">
                   Plugin
                 </NavLink>
-              </li>
-
-           
-              
-            
+              </li>           
             </ul>
             
           </div>

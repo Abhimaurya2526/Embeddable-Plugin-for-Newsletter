@@ -1,0 +1,6 @@
+.gradient-custom-3 {
+    background: rgba(135, 206, 235, 0.5); /* Sky blue with 50% transparency */
+    backdrop-filter: blur(10px); /* Optional: Adds a blur effect to the background */
+    border: 1px solid rgba(135, 206, 235, 0.8); /* Optional: Border to match background */
+  }
+  
