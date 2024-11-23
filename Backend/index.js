@@ -21,7 +21,7 @@ app.use(express.static('./static/resources'));
 
 
 app.listen( port, () => {
-    console.log('server has started');
+    console.log('server has started....');
 }
 
 );
