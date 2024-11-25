@@ -19,6 +19,9 @@ app.use('/subscriber',subscriberRouter);
 
 app.use(express.static('./static/resources'));
 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
 
 app.listen( port, () => {
     console.log('server has started....');
