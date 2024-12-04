@@ -12,7 +12,7 @@ const Register = () => {
         // 4. Data Format
 
        // to send request on backend - to connect frontend and backend.
-        const response = await fetch('http://localhost:5000/user/add', {
+        const response = await fetch('http://embeddable-plugin-for-newsletter.onrender.com/user/add', {
             method : 'POST',
             body : JSON.stringify(formdata),
             headers : {

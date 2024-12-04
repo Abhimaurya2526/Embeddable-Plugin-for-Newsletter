@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
+const env = require('dotenv').config();
+
 
 const databaseName = "abhi"
-const url= `mongodb+srv://abhi:abhi2@cluster0.hrmj2ca.mongodb.net/`;
+const url= process.env.MONGO_URI;
 
 mongoose.connect(url)
 .then((result) => {

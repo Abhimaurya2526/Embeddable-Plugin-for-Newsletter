@@ -10,7 +10,7 @@ const Login = () => {
     resetForm();
 
     try {
-      const response = await fetch("http://localhost:5000/user/authenticate", {
+      const response = await fetch("http://embeddable-plugin-for-newsletter.onrender.com/user/authenticate", {
         method: "POST",
         body: JSON.stringify(formdata),
         headers: {
