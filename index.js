@@ -10,6 +10,13 @@ const port = 5000;
 
 app.use(express.json());
 
+
+app.use(cors({
+  origin: 'http://localhost:3000', // Allow requests from your frontend
+  methods: 'GET,POST,PUT,DELETE,OPTIONS', // Allow these HTTP methods
+  allowedHeaders: 'Content-Type,Authorization', // Allow these headers
+}));
+
 // CORS configuration
 app.use(cors());
 
