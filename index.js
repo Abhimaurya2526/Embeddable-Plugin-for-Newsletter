@@ -22,7 +22,10 @@ app.use(express.static('./static/resources'));
 app.get('/', (req, res) => {
     res.send('Hello World!')
   })
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b0d9d9809d94ff0ae66d6b0d1c61919fff9cc03
 
 app.listen( port, () => {
     console.log('server has started....');

@@ -3,6 +3,7 @@ const router = express.Router();
 const Model = require('../models/subscriberModel');
 
 
+
 router.post('/add', (req, res) => {
     console.log(req.body);
     
